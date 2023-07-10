@@ -16,10 +16,6 @@
             background-color: #B4D5E7;
         }
 
-        .bg_weight {
-            background-color: lightgray;
-        }
-
         .is-invalid {
             background-color: #f8d7da !important;
         }
@@ -41,6 +37,13 @@
             -webkit-appearance: none;
             margin: 0;
         }
+
+        /* .background_image {
+            background-image: url('3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        } */
     </style>
 </head>
 
@@ -76,7 +79,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="weight">Weight (Kg):</label>
+                    <label for="weight">Weight (Kg): <i>*Minimum 20Kg</i></label>
                     <input type="number" id="weight" class="form-control" required />
                 </div>
 
@@ -105,26 +108,26 @@
 
             </form>
         
-            <div id="resultDiv" class="container shadow p-3 mb-3  rounded ">
-                <label><b>Price (Per Kg):</b></label>
+            <div id="resultDiv" class="container shadow p-3 mb-3 text-center hide_element rounded">
+                <label><b>Price:</b></label>
                 <span id="price"></span><br>
                 
                 <label><b>ODA Charge:</b></label>
                 <span id="ODA_charge"></span><br>
-
-                <label><b>Total Amount:</b></label>
-                <span id="finalAmount"></span>
+                <hr>
+                <label><b><h3>Total Amount:</h3></b></label>
+                <span><b><h3 id="finalAmount"></h3></b></span>
             </div>
         </div>
     </main>
 
-    <footer class="text-center text-lg-start bg-dark text-secondary mt-auto">
+    <footer class="text-lg-start bg-dark text-white mt-auto">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             
             <div class="container text-center text-md-start">
                 <div class="row">
                     <div class="col-md col-lg col-xl mx-auto">
-                        <h5 class="text-white text-uppercase fw-bold"><b>OUR SERVICES</b></h5>
+                        <h5 class="text-uppercase fw-bold"><b>OUR SERVICES</b></h5>
                         <h6>B2B Service</h6>
                         <h6>B2C Service</h6>
                         <h6>Amazon, Flipkart Self Order</h6>
@@ -132,7 +135,7 @@
                     </div>
 
                     <div class="col-md col-lg col-xl mx-auto">
-                        <h5 class="text-white text-uppercase fw-bold"><b>Contact Us</b></h5>
+                        <h5 class="text-uppercase fw-bold"><b>Contact Us</b></h5>
                         <h6>+91 74340 28012</h6>
                         <h6><span class="new_line">Sr. No. 35/3, Ground Floor, Shop No. 1-2, Near Suman Pratik, Oppo. Vrindavan Farm, Dabholi Road Surat - 395004</span></h6>
                         <!-- <h6> info@example.com </h6> -->
@@ -142,7 +145,7 @@
             </div>
         </section>
 
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="justify-content-center p-4 navbar navbar-dark bg-dark">
             © 2023 Speed Delivery Logistics. All rights reserved.
         </div>
     </footer>
