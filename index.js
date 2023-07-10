@@ -58,9 +58,9 @@ reader.onload = function (e) {
     console.log(pincode_details_json)
 
     // Event listener for pincode input
-    const pincodeInput = document.getElementById("pincode");
+    document.getElementById("pincode").addEventListener("input", function () {
+        const pincodeInput = document.getElementById("pincode");
 
-    pincodeInput.addEventListener("input", function () {
         const pincode = this.value;
         const pincode_details = pincode_details_json[pincode];
 
@@ -161,14 +161,14 @@ reader.onload = function (e) {
                 var totalamount = Minimum_price_of_zone_Rest_of_India;
             }
 
-            price_state = "*Below 20Kg Minimum Charge applied Rs " + totalamount + "/-";
+            price_state = totalamount;
             const resultElement = document.getElementById("price");
-            resultElement.textContent = `${price_state}`;
+            resultElement.textContent = `Rs ${price_state}/-`;
         }
         else {
             var totalamount = price_state * new_weight;
             const resultElement = document.getElementById("price");
-            resultElement.textContent = `Rs ${price_state}/- Per Kg`;    
+            resultElement.textContent = `Rs ${price_state}/-`;
         }
 
 
@@ -188,11 +188,70 @@ reader.onload = function (e) {
         ODA_chargeElement.textContent = `Rs ${ODA_charge}/-`;
 
         const totalElement = document.getElementById("finalAmount");
-        totalElement.textContent = `Rs ${Final_amount}/-`;
+        totalElement.textContent = `Total Amount: Rs ${Final_amount}/-`;
 
         const resultDiv = document.getElementById("resultDiv");
         resultDiv.style.display = "block";
+
+        // Store data in localStorage
+        localStorage.setItem('weight', weight);
+        localStorage.setItem('price', price_state);
+        localStorage.setItem('ODA', ODA_charge);
+        localStorage.setItem('totalAmount', Final_amount);
+        localStorage.setItem('pincode', pincode);
     }
+
+    // Event listener for modal show event
+    // $('#orderModalDetails').on('show.bs.modal', function (e) {
+    //     // Retrieve data from localStorage
+    //     const weight = localStorage.getItem('weight');
+    //     const price = localStorage.getItem('price');
+    //     const ODA = localStorage.getItem('ODA');
+    //     const totalAmount = localStorage.getItem('totalAmount');
+    //     const pincode = localStorage.getItem('pincode');
+
+    //     // Update modal fields with retrieved data
+    //     document.getElementById('modal_weight').value = weight;
+    //     document.getElementById('modal_price').value = price;
+    //     document.getElementById('modal_ODA').value = ODA;
+    //     document.getElementById('modal_total_amount').value = totalAmount;
+    //     document.getElementById('modal_pincode').value = pincode;
+    // });
+
+    // // Event listener for modal hide event
+    // $('#orderModalDetails').on('reload', function (e) {
+    //     // Clear data from localStorage
+    //     localStorage.removeItem('weight');
+    //     localStorage.removeItem('price');
+    //     localStorage.removeItem('ODA');
+    //     localStorage.removeItem('totalAmount');
+    //     localStorage.removeItem('pincode');
+    // });
+
+    // // Event listener for send order button click
+    // document.getElementById("sendOrderButton").addEventListener("click", function () {
+    //     // Get the values from the input fields
+    //     const Weight = document.getElementById("modal_weight").value;
+    //     const Pincode = document.getElementById("pincode").value;
+    //     const Price = document.getElementById("modal_price").value;
+    //     const ODA = document.getElementById("modal_ODA").value;
+    //     const TotalAmount = document.getElementById("modal_total_amount").value;
+    //     const senderFname = document.getElementById("sender_fname").value;
+    //     const senderLname = document.getElementById("sender_lname").value;
+    //     const senderPnumber = document.getElementById("sender_pnumber").value;
+    //     const senderAddress = document.getElementById("sender_address").value;
+    //     const receiverFname = document.getElementById("receiverer_fname").value;
+    //     const receiverLname = document.getElementById("receiverer_lname").value;
+    //     const receiverPnumber = document.getElementById("receiver_pnumber").value;
+    //     const receiverAddress = document.getElementById("receiver_address").value;
+    
+    //     // Construct the WhatsApp URL with the parameters
+    //     const whatsappURL = `https://wa.me/+919586010006?text=Order%20Details%0A%0APincode%3A%20${Pincode}%0AWeight%3A%20${Weight}%0APrice%3A%20${Price}%0AODA%20Charge%3A%20${ODA}%0ATotal%20Amount%3A%20${TotalAmount}%0A%0ASender%27s%20Details%3A%0AName%3A%20${senderFname}%20${senderLname}%0APhone%20Number%3A%20${senderPnumber}%0AAddress%3A%20${senderAddress}%0A%0AReceiver%27s%20Details%3A%0AName%3A%20${receiverFname}%20${receiverLname}%0APhone%20Number%3A%20${receiverPnumber}%0AAddress%3A%20${receiverAddress}`;
+    
+    //     // Open the WhatsApp URL in a new window or tab
+    //     window.open(whatsappURL);
+    // });
+  
 };
 
 // Fetch the CSV file
