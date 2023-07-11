@@ -33,6 +33,48 @@ header, footer {
     background-color: #708090;
 }
 
+
+/* Extra small devices (portrait phones) */
+@media only screen and (max-width: 576px) {
+    /* CSS rules for extra small devices */
+    .container_width {
+        width: 80%;
+    }
+}
+
+/* Small devices (landscape phones) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    /* CSS rules for small devices */
+    .container_width {
+        width: 75%;
+    }
+}
+
+/* Medium devices (tablets) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* CSS rules for medium devices */
+    .container_width {
+        width: 60%;
+    }
+}
+
+/* Large devices (desktops) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    /* CSS rules for large devices */
+    .container_width {
+        width: 40%;
+    }
+}
+
+/* Extra large devices (large desktops) */
+@media only screen and (min-width: 1201px) {
+    /* CSS rules for extra large devices */
+    .container_width {
+        width: 40%;
+    }
+}
+  
+
 /* .background_image {
     background-image: url('3.jpg');
     background-repeat: no-repeat;
