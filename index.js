@@ -161,14 +161,13 @@ reader.onload = function (e) {
                 var totalamount = Minimum_price_of_zone_Rest_of_India;
             }
 
-            price_state = totalamount;
             const resultElement = document.getElementById("price");
-            resultElement.textContent = `Rs ${price_state}/-`;
+            resultElement.textContent = `Rs ${totalamount}/-`;
         }
         else {
             var totalamount = price_state * new_weight;
             const resultElement = document.getElementById("price");
-            resultElement.textContent = `Rs ${price_state}/-`;
+            resultElement.textContent = `Rs ${totalamount}/- (${new_weight} Kg * ${price_state} Rs)`;
         }
 
 

@@ -1,0 +1,48 @@
+.hide_element{
+    display: none;
+}
+
+.main_bg_color {
+    background-color: #F5F5F5;
+}
+
+.is-invalid {
+    background-color: #f8d7da !important;
+}
+
+input.form-control:read-only {
+    background-color: #fff;
+}
+
+.new_line {
+    white-space: pre-wrap;
+}
+
+.non_clickable {
+    pointer-events: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+header, footer {
+    /* opacity: 0.3; */
+    background-color: #708090;
+}
+
+@media (max-width: 480px) and (max-height: 800px) {
+    .container {
+        width: 75%;
+    }
+    
+}
+
+/* .background_image {
+    background-image: url('3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
