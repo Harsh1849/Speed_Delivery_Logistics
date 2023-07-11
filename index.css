@@ -34,10 +34,10 @@ header, footer {
 }
 
 @media (max-width: 480px) and (max-height: 800px) {
-    .container {
-        width: 75%;
+    .container_width {
+        width: 95%;
     }
-    
+
 }
 
 /* .background_image {
