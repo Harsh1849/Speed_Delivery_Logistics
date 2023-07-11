@@ -33,13 +33,6 @@ header, footer {
     background-color: #708090;
 }
 
-@media (max-width: 480px) and (max-height: 800px) {
-    .container_width {
-        width: 95%;
-    }
-
-}
-
 /* .background_image {
     background-image: url('3.jpg');
     background-repeat: no-repeat;
